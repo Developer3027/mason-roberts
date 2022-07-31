@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import Image from "next/image";
-import MainLayout from "../components/layouts/MainLayout";
+import MainLayout from "../components/layouts/MainLayout.component";
 
 import styles from "../styles/carWash.module.css";
 

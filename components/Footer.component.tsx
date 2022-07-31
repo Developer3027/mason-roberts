@@ -7,8 +7,8 @@ export default function Footer() {
     <div className={styles.footer}>
       <div className={styles.footer__wrapper}>
         <div className={styles.footer__main}>
-          <h1 className={styles.footer__h1}>Developer3027</h1>
-          <p className={styles.footer__p}>dev3027@mason-roberts.com</p>
+          <h1 className={styles.footer__h1}>Dev3027</h1>
+          {/* <p className={styles.footer__p}>dev3027@mason-roberts.com</p> */}
         </div>
         <div className={styles.footer__mid}>
           <Link href="/">
@@ -28,7 +28,7 @@ export default function Footer() {
           <ul>
             <Link href="/">
               <a>
-                <li>Dev3027</li>
+                <li>Home</li>
               </a>
             </Link>
             <Link href="/contact">

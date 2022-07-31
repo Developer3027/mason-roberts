@@ -16,7 +16,7 @@ import {
 
 import SkillBadge from "../components/SkillBadge";
 import QuickLinks from "../components/QuickLinks.component";
-import MainLayout from "../components/layouts/MainLayout";
+import MainLayout from "../components/layouts/MainLayout.component";
 import styles from "../styles/Home.module.css";
 //import type { PageLayout } from "./_app";
 
@@ -26,7 +26,10 @@ export default function Home<PageLayout>() {
     <div>
       <Head>
         <title>Mason Roberts | Dev3027</title>
-        <meta name="description" content="Mason Roberts site" />
+        <meta
+          name="description"
+          content="Mason Roberts portfolio site. Web development. Fullstack, frontend, backend, development with node and react."
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -296,6 +299,22 @@ export default function Home<PageLayout>() {
                             Governance, Serverless{" "}
                           </p>
                         </div>
+
+                        <div className={styles.timeline_item}>
+                          <div className={styles.circle_dot}></div>
+                          <h3 className={styles.timeline_date}>
+                            <i>
+                              <FaCalendar />
+                            </i>
+                            2022 - 2022
+                          </h3>
+                          <h4 className={styles.timeline_title}>Autobell</h4>
+                          <p className={styles.timeline_text}>
+                            Wrote Node scripts to make API calls and store data
+                            in MongoDb. Build internal reports app in NextJs
+                            using Prisma.{" "}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -335,6 +354,7 @@ export default function Home<PageLayout>() {
                           </h3>
                           <h4 className={styles.timeline_title}>
                             <a
+                              className="text-link-blue"
                               href="https://www.hermitplus.com"
                               target="_blank"
                               rel="noreferrer">
@@ -358,6 +378,7 @@ export default function Home<PageLayout>() {
                           </h3>
                           <h4 className={styles.timeline_title}>
                             <a
+                              className="text-link-blue"
                               href="https://erudition-saa-c02.vercel.app/"
                               target="_blank"
                               rel="noreferrer">
@@ -382,6 +403,7 @@ export default function Home<PageLayout>() {
                           </h3>
                           <h4 className={styles.timeline_title}>
                             <a
+                              className="text-link-blue"
                               href="https://nutrasite.herokuapp.com"
                               target="_blank"
                               rel="noreferrer">

@@ -14,8 +14,8 @@ export default function Navbar() {
                   className={styles.nav__logo__img}
                   src="/images/logo-500.png"
                   alt="logo for dev 30 27"
-                  width={50}
-                  height={50}
+                  width={100}
+                  height={100}
                 />
               </a>
             </Link>
@@ -26,6 +26,7 @@ export default function Navbar() {
             </Link>
           </h2>
           <div className={styles.nav__specials}>
+            &#40;
             <Link href="/salt-and-tar">
               <a>
                 <h4>Salt&#38;Tar</h4>
@@ -36,17 +37,17 @@ export default function Navbar() {
                 <h4>Hermits</h4>
               </a>
             </Link>
-            <Link href="/nutrasite">
+            {/* <Link href="/nutrasite">
               <a>
                 <h4>NutraSite</h4>
               </a>
-            </Link>
+            </Link> */}
             <Link href="/car-wash">
               <a>
-
                 <h4>Car Wash</h4>
               </a>
             </Link>
+            &#41;
           </div>
         </div>
       </nav>

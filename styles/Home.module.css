@@ -6,12 +6,8 @@
   @apply w-[325px] sm:w-[525px] lg:w-[950px] mt-24 sm:mt-0 mx-auto px-2 ml-20;
 }
 
-.container__txtclr__white {
-  @apply text-white;
-}
-
 .section__title {
-  @apply flex basis-full max-w-full mt-20 mb-4 justify-center items-center text-center;
+  @apply flex basis-full max-w-full mt-20 mb-4 justify-start text-2xl sm:justify-center items-center sm:text-center;
 }
 
 .section__title h2 {
@@ -35,7 +31,7 @@
 }
 
 .hero__warning {
-  @apply flex sm:hidden
+  @apply flex -mt-20 sm:hidden
 }
 
 .hero__quick__links {
@@ -52,7 +48,7 @@
 }
 
 .hero__top {
-  @apply text-base text-center text-white mt-14 mb-3 ml-6 px-2;
+  @apply text-base text-start md:text-center text-white mt-14 mb-3 md:ml-6 px-2;
 }
 
 .hero__hl {
@@ -60,11 +56,11 @@
 }
 
 .hero__mid {
-  @apply text-base text-center text-white px-2 ml-6;
+  @apply text-base text-start md:text-center text-white px-2 md:ml-6;
 }
 
 .hero__btns {
-  @apply flex flex-col items-center w-full sm:flex-row sm:justify-between m-4 px-4;
+  @apply flex flex-col items-center w-full sm:flex-row sm:justify-between my-4 md:mx-4 md:px-4;
 }
 
 .hero__btnsOne {
@@ -263,7 +259,7 @@ h3.title {
 }
 
 .timeline {
-  @apply relative bg-slate-100 px-7 py-4 border border-antique-20 rounded w-full;
+  @apply relative bg-slate-100 px-1 md:px-7 py-4 border border-antique-20 rounded w-full;
   /* background-color: var(--bg-black-100);
   padding: 30px 15px;
   border: 1px solid var(--bg-black-50);
@@ -273,9 +269,10 @@ h3.title {
 }
 
 .timeline_item {
-  position: relative;
+  @apply relative pl-1 md:pl-9 pb-2 mb-2 md:pb-6 md:mb-6 border-b-2 border-slate-300;
+  /* position: relative;
   padding-left: 37px;
-  padding-bottom: 50px;
+  padding-bottom: 50px; */
 }
 
 .timeline_item:last-child {
