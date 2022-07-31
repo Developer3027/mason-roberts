@@ -1,0 +1,11 @@
+.section {
+  @apply flex min-h-screen overflow-y-auto overflow-x-hidden transition-all;
+}
+
+.container {
+  @apply w-[325px] sm:w-[525px] lg:w-[950px] mt-24 sm:mt-0 mx-auto px-2 ml-20;
+}
+
+.carwash__wrapper {
+  @apply text-white mt-20;
+}

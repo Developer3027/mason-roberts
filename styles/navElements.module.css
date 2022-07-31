@@ -1,0 +1,36 @@
+/** ***** Top Nav ***** **/
+.nav {
+  @apply flex fixed z-10 bg-slate-50 w-full h-[70px] ;
+}
+
+.nav__wrapper {
+  @apply flex justify-start items-center w-[900px];
+}
+
+.nav__logo {
+  @apply flex justify-center items-center mt-10 ml-16 sm:ml-32 p-2.5 rounded-full border-[3px] border-antique-20 bg-slate-900 w-[75px] sm:w-[100px] h-[75px] sm:h-[100px];
+}
+
+.nav__logo__img {
+  @apply z-10;
+}
+
+.nav__logo__name a {
+  @apply no-underline ml-2 text-slate-800;
+}
+
+.nav__specials {
+  @apply hidden sm:flex flex justify-between w-[350px] ml-8;
+}
+
+.nav__specials a {
+  @apply no-underline;
+}
+
+.nav__specials h4 {
+  @apply text-slate-800 border-b-2 border-transparent;
+}
+
+.nav__specials h4:hover {
+  @apply text-slate-800 border-b-2 border-green-600
+}
