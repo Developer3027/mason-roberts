@@ -4,19 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { skillData } from "../data/homeData";
 import {
-  FaCalendar,
   FaAward,
-  FaMobileAlt,
-  FaLaptopCode,
-  FaPalette,
-  FaCode,
-  FaUniversalAccess,
-  FaBullhorn,
 } from "react-icons/fa";
 
 import SkillBadge from "../components/SkillBadge";
 import QuickLinks from "../components/QuickLinks.component";
 import MainLayout from "../components/layouts/MainLayout.component";
+import { ResumeCard, ServicesCard } from "../components/Resume.components";
+
+import { experience, education, services } from "../data/homeData";
 import styles from "../styles/Home.module.css";
 //import type { PageLayout } from "./_app";
 
@@ -231,90 +227,14 @@ export default function Home<PageLayout>() {
                   <div className={styles.row}>
                     <div className={styles.timeline_box}>
                       <div className={styles.timeline}>
-                        <div className={styles.timeline_item}>
-                          <div className={styles.circle_dot}></div>
-                          <h3 className={styles.timeline_date}>
-                            <i>
-                              <FaCalendar />
-                            </i>
-                            2018 - 2019
-                          </h3>
-                          <h4 className={styles.timeline_title}>
-                            my computer career
-                          </h4>
-                          <p className={styles.timeline_text}>
-                            received Linux Essentials LE-1 / MTA Security
-                            Fundamentals
-                          </p>
-                        </div>
-
-                        <div className={styles.timeline_item}>
-                          <div className={styles.circle_dot}></div>
-                          <h3 className={styles.timeline_date}>
-                            <i>
-                              <FaCalendar />
-                            </i>
-                            2019 - 2020
-                          </h3>
-                          <h4 className={styles.timeline_title}>
-                            Lambda School
-                          </h4>
-                          <p className={styles.timeline_text}>
-                            Full Stack Web Development - HTML, CSS, Javascript,
-                            ReactJs, mySql, Node, Github, Slack, Zoom
-                          </p>
-                        </div>
-
-                        <div className={styles.timeline_item}>
-                          <div className={styles.circle_dot}></div>
-                          <h3 className={styles.timeline_date}>
-                            <i>
-                              <FaCalendar />
-                            </i>
-                            2020 - 2021
-                          </h3>
-                          <h4 className={styles.timeline_title}>
-                            Frontend Mentor
-                          </h4>
-                          <p className={styles.timeline_text}>
-                            Full Stack Web Development - HTML, CSS, Javascript,
-                            ReactJs, MERN, Node, Github
-                          </p>
-                        </div>
-
-                        <div className={styles.timeline_item}>
-                          <div className={styles.circle_dot}></div>
-                          <h3 className={styles.timeline_date}>
-                            <i>
-                              <FaCalendar />
-                            </i>
-                            2021 - 2022
-                          </h3>
-                          <h4 className={styles.timeline_title}>
-                            www.acloudguru.com
-                          </h4>
-                          <p className={styles.timeline_text}>
-                            AWS Solution Architect Associate - Storage, VPC,
-                            Cloud Networks, Cloud Security, Decoupling,
-                            Governance, Serverless{" "}
-                          </p>
-                        </div>
-
-                        <div className={styles.timeline_item}>
-                          <div className={styles.circle_dot}></div>
-                          <h3 className={styles.timeline_date}>
-                            <i>
-                              <FaCalendar />
-                            </i>
-                            2022 - 2022
-                          </h3>
-                          <h4 className={styles.timeline_title}>Autobell</h4>
-                          <p className={styles.timeline_text}>
-                            Wrote Node scripts to make API calls and store data
-                            in MongoDb. Build internal reports app in NextJs
-                            using Prisma.{" "}
-                          </p>
-                        </div>
+                        {education.map((item) => (
+                          <ResumeCard
+                            key={item.id}
+                            dateRange={item.dateRange}
+                            title={item.title}
+                            desc={item.desc}
+                          />
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -324,113 +244,14 @@ export default function Home<PageLayout>() {
                   <div className={styles.row}>
                     <div className={styles.timeline_box}>
                       <div className={styles.timeline}>
-                        <div className={styles.timeline_item}>
-                          <div className={styles.circle_dot}></div>
-                          <h3 className={styles.timeline_date}>
-                            <i>
-                              <FaCalendar />
-                            </i>
-                            2020 - current
-                          </h3>
-                          <h4 className={styles.timeline_title}>
-                            <Link href="/salt-and-tar">
-                              <a className="text-link-blue">Salt and Tar</a>
-                            </Link>
-                          </h4>
-                          <p className={styles.timeline_text}>
-                            Fan site and web app designed for a better
-                            experience watching and supporting a YouTube content
-                            creator.
-                          </p>
-                        </div>
-
-                        <div className={styles.timeline_item}>
-                          <div className={styles.circle_dot}></div>
-                          <h3 className={styles.timeline_date}>
-                            <i>
-                              <FaCalendar />
-                            </i>
-                            2020 - 2022
-                          </h3>
-                          <h4 className={styles.timeline_title}>
-                            <a
-                              className="text-link-blue"
-                              href="https://www.hermitplus.com"
-                              target="_blank"
-                              rel="noreferrer">
-                              Hermit Plus
-                            </a>
-                          </h4>
-                          <p className={styles.timeline_text}>
-                            web app that brings all the hermits together in one
-                            place. Think Disney plus for hermits. Enjoy like
-                            never before.
-                          </p>
-                        </div>
-
-                        <div className={styles.timeline_item}>
-                          <div className={styles.circle_dot}></div>
-                          <h3 className={styles.timeline_date}>
-                            <i>
-                              <FaCalendar />
-                            </i>
-                            2021 - 2022
-                          </h3>
-                          <h4 className={styles.timeline_title}>
-                            <a
-                              className="text-link-blue"
-                              href="https://erudition-saa-c02.vercel.app/"
-                              target="_blank"
-                              rel="noreferrer">
-                              Erudition
-                            </a>
-                          </h4>
-                          <p className={styles.timeline_text}>
-                            Cliff notes web app for learning AWS Solution
-                            Architect Associate certification. Quiz&#39;s,
-                            Practice Exams, and study notes to help learn and
-                            keep fresh with AWS services and resources. In
-                            Progress.
-                          </p>
-                        </div>
-                        <div className={styles.timeline_item}>
-                          <div className={styles.circle_dot}></div>
-                          <h3 className={styles.timeline_date}>
-                            <i>
-                              <FaCalendar />
-                            </i>
-                            2020 - 2021
-                          </h3>
-                          <h4 className={styles.timeline_title}>
-                            <a
-                              className="text-link-blue"
-                              href="https://nutrasite.herokuapp.com"
-                              target="_blank"
-                              rel="noreferrer">
-                              NutraSite
-                            </a>
-                          </h4>
-                          <p className={styles.timeline_text}>
-                            Online ecommerce store built with the MERN Stack.
-                            Local retail store concept in progress.
-                          </p>
-                        </div>
-
-                        <div className={styles.timeline_item}>
-                          <div className={styles.circle_dot}></div>
-                          <h3 className={styles.timeline_date}>
-                            <i>
-                              <FaCalendar />
-                            </i>
-                            2021 - 2022
-                          </h3>
-                          <h4 className={styles.timeline_title}>
-                            Template sites
-                          </h4>
-                          <p className={styles.timeline_text}>
-                            Collection of HTML, CSS, Javascript sites.
-                          </p>
-                        </div>
+                        {experience.map((item) => (
+                          <ResumeCard
+                            key={item.id}
+                            dateRange={item.dateRange}
+                            title={item.title}
+                            desc={item.desc}
+                          />
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -448,78 +269,10 @@ export default function Home<PageLayout>() {
               </div>
             </div>
             <div className={styles.card__row}>
-              <div className={styles.service__item}>
-                <div className={styles.service__item__inner}>
-                  <div className={styles.service__icons}>
-                    <FaMobileAlt style={serviceIconStyle} />
-                  </div>
-                  <h4>Responsive</h4>
-                  <p>
-                    Mobile first or desktop first, your site will look and
-                    respond great. Phone, tablet, or computer.
-                  </p>
-                </div>
-              </div>
-              <div className={styles.service__item}>
-                <div className={styles.service__item__inner}>
-                  <div className={styles.service__icons}>
-                    <FaLaptopCode style={serviceIconStyle} />
-                  </div>
-                  <h4>Development</h4>
-                  <p>
-                    Frontend, or backend. Built for you from the ground up. From
-                    design to React to Node and MongoDb.
-                  </p>
-                </div>
-              </div>
-              <div className={styles.service__item}>
-                <div className={styles.service__item__inner}>
-                  <div className={styles.service__icons}>
-                    <FaPalette style={serviceIconStyle} />
-                  </div>
-                  <h4>Design</h4>
-                  <p>
-                    Figma! Clients can comment on live file. Prototype! Get
-                    graphics in PNG or SVG. formats!
-                  </p>
-                </div>
-              </div>
-              <div className={styles.service__item}>
-                <div className={styles.service__item__inner}>
-                  <div className={styles.service__icons}>
-                    <FaCode style={serviceIconStyle} />
-                  </div>
-                  <h4>Code</h4>
-                  <p>
-                    Code is yours! I use Github, follow industry standards and
-                    write clean code. Take it anywhere, it&#39;s yours.
-                  </p>
-                </div>
-              </div>
-              <div className={styles.service__item}>
-                <div className={styles.service__item__inner}>
-                  <div className={styles.service__icons}>
-                    <FaUniversalAccess style={serviceIconStyle} />
-                  </div>
-                  <h4>DNA</h4>
-                  <p>
-                    Web for everyone, built with A11y in mind. Images are
-                    optimized, sized and formatted for faster load times.
-                  </p>
-                </div>
-              </div>
-              <div className={styles.service__item}>
-                <div className={styles.service__item__inner}>
-                  <div className={styles.service__icons}>
-                    <FaBullhorn style={serviceIconStyle} />
-                  </div>
-                  <h4>SEO</h4>
-                  <p>
-                    Every site has meta and og tags for search engines and
-                    social networks to find and rank your site.{" "}
-                  </p>
-                </div>
-              </div>
+              {services.map(item => (
+                <ServicesCard key={item.id} icon={item.icon} title={item.title} desc={item.desc} />
+              ))}
+
             </div>
           </div>
         </section>

@@ -24,8 +24,7 @@ export default function QuickLinks() {
           </Link>
         </Tooltip>
         <Tooltip tooltipText="Hermit Plus">
-          <Link href="">
-            <a>
+            <a href="https://hermitplus.com" rel="noopener" target="__blank">
               <Image
                 src="/images/Hermit_logo.svg"
                 alt="hermit plus"
@@ -33,7 +32,6 @@ export default function QuickLinks() {
                 height={76}
               />
             </a>
-          </Link>
         </Tooltip>
         {/* <Tooltip tooltipText="Nutra Site">
           <Link href="">
