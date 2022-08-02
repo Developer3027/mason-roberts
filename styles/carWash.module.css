@@ -9,3 +9,23 @@
 .carwash__wrapper {
   @apply text-white mt-20;
 }
+
+.carwash__code {
+  @apply text-yellow-200 font-light
+}
+
+.carwash__code__tab {
+  @apply text-yellow-200 font-light ml-2
+}
+
+.carwash__code__tab2 {
+  @apply text-yellow-200 font-light ml-4
+}
+
+.carwash__code__tab3 {
+  @apply text-yellow-200 font-light ml-6
+}
+
+.carwash__code__tab4 {
+  @apply text-yellow-200 font-light ml-8
+}

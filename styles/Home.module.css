@@ -313,10 +313,11 @@ h3.title {
 }
 
 .timeline_title {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 15px;
-  color: var(--text-black-900);
+  @apply text-lg font-bold mb-3 text-black
+}
+
+.timeline_title__link {
+  @apply text-lg font-bold mb-3 text-link-blue
 }
 
 .timeline_text {

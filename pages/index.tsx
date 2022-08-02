@@ -10,7 +10,7 @@ import {
 import SkillBadge from "../components/SkillBadge";
 import QuickLinks from "../components/QuickLinks.component";
 import MainLayout from "../components/layouts/MainLayout.component";
-import { ResumeCard, ServicesCard } from "../components/Resume.components";
+import { EduCard, ExpCard, ServicesCard } from "../components/Resume.components";
 
 import { experience, education, services } from "../data/homeData";
 import styles from "../styles/Home.module.css";
@@ -226,9 +226,9 @@ export default function Home<PageLayout>() {
                   <h3 className={styles.title}>Education</h3>
                   <div className={styles.row}>
                     <div className={styles.timeline_box}>
-                      <div className={styles.timeline}>
+                      <div id="education" className={styles.timeline}>
                         {education.map((item) => (
-                          <ResumeCard
+                          <EduCard
                             key={item.id}
                             dateRange={item.dateRange}
                             title={item.title}
@@ -243,11 +243,12 @@ export default function Home<PageLayout>() {
                   <h3 className={styles.title}>Experience</h3>
                   <div className={styles.row}>
                     <div className={styles.timeline_box}>
-                      <div className={styles.timeline}>
+                      <div id="experience" className={styles.timeline}>
                         {experience.map((item) => (
-                          <ResumeCard
+                          <ExpCard
                             key={item.id}
                             dateRange={item.dateRange}
+                            linkTag={item.linkTag}
                             title={item.title}
                             desc={item.desc}
                           />
@@ -269,10 +270,14 @@ export default function Home<PageLayout>() {
               </div>
             </div>
             <div className={styles.card__row}>
-              {services.map(item => (
-                <ServicesCard key={item.id} icon={item.icon} title={item.title} desc={item.desc} />
+              {services.map((item) => (
+                <ServicesCard
+                  key={item.id}
+                  icon={item.icon}
+                  title={item.title}
+                  desc={item.desc}
+                />
               ))}
-
             </div>
           </div>
         </section>

@@ -1,6 +1,7 @@
 import { ReactElement } from "react";
 import Image from "next/image";
 import MainLayout from "../components/layouts/MainLayout.component";
+import ExampleCode from "../components/ExampleCode.component";
 
 import styles from "../styles/carWash.module.css";
 
@@ -19,7 +20,10 @@ export default function CarWash() {
                 height={80}
               />
               <h1 className="text-2xl underline pl-4">
-                <a href="https://carwash-black.vercel.app" rel="noopener" target="__blank">
+                <a
+                  href="https://carwash-black.vercel.app"
+                  rel="noopener"
+                  target="__blank">
                   visit site
                 </a>
               </h1>
@@ -37,8 +41,8 @@ export default function CarWash() {
               data and dump that data into an on premises MongoDB database. The
               data retrieved from the api calls was an array of objects coming
               from a Postgres database. I will refer to those objects as
-              records. The api would allow for 1000 records at a time and the
-              ability to pass conditions to get the data you wanted back. I
+              records. The api would allow for 1000 records at a time and has
+              the ability to pass conditions to get the data you wanted back. I
               could pass &ldquo;createdDate GT today&ldquo; to get records back
               greater than todays date.
             </p>
@@ -76,6 +80,10 @@ export default function CarWash() {
               tool made an api call for a specified number of records to a
               specific endpoint.
             </p>
+            <p className="py-2">
+              Here is an example of the tool I made to make a single call and get some records. I did not want or need a ton of records when testing the endpoints or script logic. This allowed me to set my variables for the endpoint, the Mongo collection and throttle the records. Of course this does not do anything without the other bits. This is just to demonstrate some of the work I did and how I approached some problems.
+            </p>
+            <ExampleCode />
             <p className="py-2">
               The second half of this tour was to begin putting together a web
               app for internal reporting. There had been discussion on this but
