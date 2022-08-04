@@ -10,7 +10,7 @@ import {
 import SkillBadge from "../components/SkillBadge";
 import QuickLinks from "../components/QuickLinks.component";
 import MainLayout from "../components/layouts/MainLayout.component";
-import { EduCard, ExpCard, ServicesCard } from "../components/Resume.components";
+import { EduCard, ExpCard, ProjectCard, ServicesCard } from "../components/Card.component";
 
 import { experience, education, services } from "../data/homeData";
 import styles from "../styles/Home.module.css";
@@ -300,6 +300,12 @@ export default function Home<PageLayout>() {
                   started as quick as possible.
                 </p>
               </div>
+            </div>
+            <div className={styles.row2}>
+              <ProjectCard
+                imageUrl="/images/portfolio/volvo.png"
+                subText="Volvo Electric - Learn Tailwind CSS and build your own version, or here is my code and example site for review."
+              />
             </div>
             {/* <div class="row">
             <div class="portfolio-heading">

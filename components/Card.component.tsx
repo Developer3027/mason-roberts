@@ -76,3 +76,64 @@ export function ServicesCard(props: SrvCard) {
     </div>
   );
 }
+
+//^ future - ref https://codesandbox.io/s/interesting-http-1dehy?file=/src/styles.css
+// interface ProjectProps {
+//   title: string;
+//   subtext: string;
+//   imageUrl: string;
+// }
+
+// export function ProjectCard(props: ProjectProps) {
+//   return (
+//     <figure className={styles.port__figure}>
+//       <img src={props.imageUrl} alt="background" />
+//       <figcaption>
+//         <div>
+//           <h2>{props.title}</h2>
+//           <p>{props.subtext}</p>
+//         </div>
+//       </figcaption>
+//     </figure>
+//   )
+// }
+
+interface ProjectProps {
+  imageUrl: string;
+  subText: string;
+}
+
+export function ProjectCard(props: ProjectProps) {
+  return (
+    <figure className={styles.port__figure}>
+      <img src={props.imageUrl} alt="background" />
+      <figcaption className="text-white p-1">{props.subText}</figcaption>
+      <div className="flex justify-evenly w-full mt-2 pb-3">
+        <a
+          href="https://gitlab.com/Dev3027/volvo-electric"
+          target="__blank"
+          rel="noreferrer">
+          <button className="text-white border border-slate-200 rounded-md w-20 py-1">
+            Gitlab
+          </button>
+        </a>
+        <a
+          href="https://www.udemy.com/share/105Pgi3@fLJeowilVIMdBKpV5OSB5nOt_sH-KY_TdbCYHh0fP8LBrtG_Js-JFZUQRQUb_Ks4/"
+          target="__blank"
+          rel="noreferrer">
+          <button className="text-white border border-slate-200 rounded-md w-20 py-1">
+            Learn
+          </button>
+        </a>
+        <a
+          href="https://dev3027.gitlab.io/volvo-electric/"
+          target="__blank"
+          rel="noreferrer">
+          <button className="text-white border border-slate-200 rounded-md w-20 py-1">
+            Site
+          </button>
+        </a>
+      </div>
+    </figure>
+  );
+}

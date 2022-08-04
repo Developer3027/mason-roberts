@@ -94,7 +94,7 @@ export const experience = [
   {
     id: 2,
     dateRange: "2020 - 2022",
-    linkTag: "/#experience",
+    linkTag: "/hermits",
     title: "Hermit Plus",
     desc: "Web app that brings all the hermits together in one place. Think Disney plus for hermits. Enjoy like never before.",
   },

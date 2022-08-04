@@ -32,9 +32,12 @@ export default function Navbar() {
                 <h4>Salt&#38;Tar</h4>
               </a>
             </Link>
-            <a href="https://hermitplus.com" rel="noopener" target="__blank">
-              <h4>Hermits</h4>
-            </a>
+            <Link href="/hermits">
+              <a>
+                {/* <a href="https://hermitplus.com" rel="noopener" target="__blank"> */}
+                <h4>Hermits</h4>
+              </a>
+            </Link>
             {/* <Link href="/nutrasite">
               <a>
                 <h4>NutraSite</h4>
