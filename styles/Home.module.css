@@ -403,5 +403,5 @@ h3.title {
 }
 
 .port__figure {
-  @apply max-w-[480px] max-h-[360px] overflow-hidden w-[33%] cursor-pointer border border-slate-500 rounded-md
+  @apply max-w-[480px] max-h-[360px] overflow-hidden w-full lg:w-[33%] h-full cursor-pointer border border-slate-500 rounded-md
 }

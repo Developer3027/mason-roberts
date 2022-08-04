@@ -107,8 +107,8 @@ export function ProjectCard(props: ProjectProps) {
   return (
     <figure className={styles.port__figure}>
       <img src={props.imageUrl} alt="background" />
-      <figcaption className="text-white p-1">{props.subText}</figcaption>
-      <div className="flex justify-evenly w-full mt-2 pb-3">
+      <figcaption className="text-white p-1 h-full">{props.subText}</figcaption>
+      <div className="flex justify-evenly w-full h-full mt-2 pb-3">
         <a
           href="https://gitlab.com/Dev3027/volvo-electric"
           target="__blank"
