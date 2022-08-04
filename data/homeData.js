@@ -159,3 +159,43 @@ export const services = [
     desc: "Every site has meta and og tags for search engines and social networks to find and rank your site.",
   },
 ];
+
+export const templateData = [
+  {
+    id: 1,
+    imageUrl: "/images/portfolio/volvo.png",
+    subText:
+      "Volvo Electric - Learn Tailwind CSS and build your own version, or here is my code and example site for review.",
+    tagOneUrl: "https://gitlab.com/Dev3027/volvo-electric",
+    btnOneTxt: "Gitlab",
+    tagTwoUrl:
+      "https://www.udemy.com/share/105Pgi3@fLJeowilVIMdBKpV5OSB5nOt_sH-KY_TdbCYHh0fP8LBrtG_Js-JFZUQRQUb_Ks4/",
+    btnTwoTxt: "Learn",
+    tagThreeUrl: "https://dev3027.gitlab.io/volvo-electric/",
+    btnThreeTxt: "Site",
+  },
+  {
+    id: 2,
+    imageUrl: "/images/portfolio/kate.png",
+    subText:
+      "Kathryn ran for a SC senate seat at the start of the pandemic. I love the site. Here is my code and example site for review.",
+    tagOneUrl: "https://github.com/Developer3027/Kate_v2",
+    btnOneTxt: "Github",
+    tagTwoUrl: "#",
+    btnTwoTxt: "no link",
+    tagThreeUrl: "https://kate-v2.vercel.app#",
+    btnThreeTxt: "Site",
+  },
+  {
+    id: 3,
+    imageUrl: "/images/portfolio/music-found.png",
+    subText:
+      "Brad Traversy project with my spin. Found this track while playing around in SoundCloud and loved it. Not my typical genre, but after I added the static, just loved.",
+    tagOneUrl: "https://github.com/Developer3027/hero-video",
+    btnOneTxt: "Github",
+    tagTwoUrl: "https://www.youtube.com/watch?v=8MgpE2DTTKA",
+    btnTwoTxt: "Learn",
+    tagThreeUrl: "https://cocky-cori-7cae1e.netlify.app",
+    btnThreeTxt: "Site",
+  },
+];

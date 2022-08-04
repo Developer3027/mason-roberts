@@ -12,7 +12,12 @@ import QuickLinks from "../components/QuickLinks.component";
 import MainLayout from "../components/layouts/MainLayout.component";
 import { EduCard, ExpCard, ProjectCard, ServicesCard } from "../components/Card.component";
 
-import { experience, education, services } from "../data/homeData";
+import {
+  experience,
+  education,
+  services,
+  templateData,
+} from "../data/homeData";
 import styles from "../styles/Home.module.css";
 //import type { PageLayout } from "./_app";
 
@@ -126,7 +131,7 @@ export default function Home<PageLayout>() {
                       went through Lambda School and learned full stack
                       development. I learned Figma and designed many sites and
                       apps. In 2022 I learned AWS services, the resources and
-                      tools available. Now I build web based solutions for you.
+                      tools available. Recently I assisted a widely known carwash with an internal reports dashboard that was authenticated through Microsoft using MSAL. I became very familiar with Azure. Now I build web based solutions for you.
                     </p>
                   </div>
                 </div>
@@ -302,10 +307,19 @@ export default function Home<PageLayout>() {
               </div>
             </div>
             <div className={styles.row2}>
-              <ProjectCard
-                imageUrl="/images/portfolio/volvo.png"
-                subText="Volvo Electric - Learn Tailwind CSS and build your own version, or here is my code and example site for review."
-              />
+              {templateData.map(item => (
+                <ProjectCard
+                  key={item.id}
+                  imageUrl={item.imageUrl}
+                  subText={item.subText}
+                  tagOneUrl={item.tagOneUrl}
+                  btnOneTxt={item.btnOneTxt}
+                  tagTwoUrl={item.tagTwoUrl}
+                  btnTwoTxt={item.btnTwoTxt}
+                  tagThreeUrl={item.tagThreeUrl}
+                  btnThreeTxt={item.btnThreeTxt}
+                />
+              ))}
             </div>
             {/* <div class="row">
             <div class="portfolio-heading">

@@ -101,6 +101,12 @@ export function ServicesCard(props: SrvCard) {
 interface ProjectProps {
   imageUrl: string;
   subText: string;
+  tagOneUrl: string;
+  btnOneTxt: string;
+  tagTwoUrl: string;
+  btnTwoTxt: string;
+  tagThreeUrl: string;
+  btnThreeTxt: string;
 }
 
 export function ProjectCard(props: ProjectProps) {
@@ -108,29 +114,29 @@ export function ProjectCard(props: ProjectProps) {
     <figure className={styles.port__figure}>
       <img src={props.imageUrl} alt="background" />
       <figcaption className="text-white p-1 h-full">{props.subText}</figcaption>
-      <div className="flex justify-evenly w-full h-full mt-2 pb-3">
+      <div className="flex justify-evenly w-full h-full my-2 pb-3">
         <a
-          href="https://gitlab.com/Dev3027/volvo-electric"
+          href={props.tagOneUrl}
           target="__blank"
           rel="noreferrer">
           <button className="text-white border border-slate-200 rounded-md w-20 py-1">
-            Gitlab
+            {props.btnOneTxt}
           </button>
         </a>
         <a
-          href="https://www.udemy.com/share/105Pgi3@fLJeowilVIMdBKpV5OSB5nOt_sH-KY_TdbCYHh0fP8LBrtG_Js-JFZUQRQUb_Ks4/"
+          href={props.tagTwoUrl}
           target="__blank"
           rel="noreferrer">
           <button className="text-white border border-slate-200 rounded-md w-20 py-1">
-            Learn
+            {props.btnTwoTxt}
           </button>
         </a>
         <a
-          href="https://dev3027.gitlab.io/volvo-electric/"
+          href={props.tagThreeUrl}
           target="__blank"
           rel="noreferrer">
           <button className="text-white border border-slate-200 rounded-md w-20 py-1">
-            Site
+            {props.btnThreeTxt}
           </button>
         </a>
       </div>
