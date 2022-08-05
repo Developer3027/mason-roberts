@@ -24,6 +24,7 @@ module.exports = {
         dosis: ["Dosis", "sans-serif"],
         fell: ["IM Fell English SC", "serif"],
         Inconsolata: ["Inconsolata", "monospace"],
+        Prompt: ["'Prompt', sans-serif;"],
       },
       backgroundImage: {
         "st-logo": "url(/images/logo.svg)",

@@ -190,7 +190,7 @@ export const templateData = [
     id: 3,
     imageUrl: "/images/portfolio/music-found.png",
     subText:
-      "Brad Traversy project with my spin. Found this track while playing around in SoundCloud and loved it. Not my typical genre, but after I added the static, just loved.",
+      "Brad Traversy project with my spin. Found this track while playing around in SoundCloud. Not my typical genre, but after I added the static, just loved.",
     tagOneUrl: "https://github.com/Developer3027/hero-video",
     btnOneTxt: "Github",
     tagTwoUrl: "https://www.youtube.com/watch?v=8MgpE2DTTKA",

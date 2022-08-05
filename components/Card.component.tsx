@@ -143,3 +143,28 @@ export function ProjectCard(props: ProjectProps) {
     </figure>
   );
 }
+
+interface HermitProps {
+  season: string;
+  episode: string;
+  imageUrl: string;
+  subText: string;
+}
+
+export function HermitCard(props: HermitProps) {
+  return (
+    <div className="flex flex-col p-2 w-full my-1 bg-[#40A5DD] rounded-md text-white px-4 xl:px-0">
+      <h4>{`Season ${props.season} Episode ${props.episode}`}</h4>
+      <div className="flex mt-1">
+        <img
+          src={props.imageUrl}
+          alt="one"
+          className=" bg-red-400 min-w-[150px] h-[84px]"
+        />
+        <span className="hidden xl:block text-xs px-1">
+          {props.subText}
+        </span>
+      </div>
+    </div>
+  );
+}
