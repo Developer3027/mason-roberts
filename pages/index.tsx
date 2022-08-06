@@ -1,10 +1,11 @@
-import {ReactElement} from "react";
+import { ReactElement, useRef } from "react";
+import ReactToPrint from "react-to-print";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { skillData } from "../data/homeData";
 import {
-  FaAward,
+  FaAward, FaStar,
 } from "react-icons/fa";
 
 import SkillBadge from "../components/SkillBadge";
@@ -23,6 +24,7 @@ import styles from "../styles/Home.module.css";
 
 export default function Home<PageLayout>() {
   const serviceIconStyle = { color: "darkslategrey", fontSize: "36px" };
+  let componentRef = useRef(null);
   return (
     <div>
       <Head>
@@ -76,13 +78,13 @@ export default function Home<PageLayout>() {
                   </div>
 
                   <div className={styles.hero__btns}>
-                    <Link className={styles.hero__link} href="/dash">
+                    {/* <Link className={styles.hero__link} href="/dash">
                       <a>
                         <div className={styles.hero__btnsOne}>
                           <p>Enter</p>
                         </div>
                       </a>
-                    </Link>
+                    </Link> */}
                     <Link className={styles.hero__link} href="/contact">
                       <a>
                         <div className={styles.hero__btnsTwo}>
@@ -112,16 +114,21 @@ export default function Home<PageLayout>() {
         <section id="about" className={styles.section}>
           <div className={styles.container}>
             <div className="row">
-              <div className={styles.section__title}>
+              <div className={styles.section__group}>
                 <h2>About</h2>
+                <ReactToPrint
+                  trigger={() => <button>Print</button>}
+                  documentTitle="Mason Roberts Resume"
+                  content={() => componentRef.current}
+                />
               </div>
             </div>
-            <div className={styles.row}>
+            <div ref={componentRef} className={styles.row}>
               <div className={styles.about__content}>
                 <div className={styles.row}>
                   <div className={styles.about__text}>
                     <h3>
-                      I&apos;m Mason Roberts, a <span>Web Architect</span>.
+                      Mason Roberts - <span>Web Architect</span>.
                     </h3>
                     <p>
                       I have always been into computer and tech. In 2019 I went
@@ -131,13 +138,24 @@ export default function Home<PageLayout>() {
                       went through Lambda School and learned full stack
                       development. I learned Figma and designed many sites and
                       apps. In 2022 I learned AWS services, the resources and
-                      tools available. Recently I assisted a widely known carwash with an internal reports dashboard that was authenticated through Microsoft using MSAL. I became very familiar with Azure. Now I build web based solutions for you.
+                      tools available. Recently I assisted a widely known
+                      carwash with an internal reports dashboard that was
+                      authenticated through Microsoft using MSAL. I became very
+                      familiar with Azure. Now I build web based solutions for
+                      you. <br />
+                      <br />
+                      Skills: HTML, CSS, Javascript, Node, React, Next, Express,
+                      Nest, Sql, Mongo, Mongoose, Prisma, TypeORM, AWS, Azure
                     </p>
                   </div>
                 </div>
                 <div className={styles.row}>
                   <div className={styles.about__text}>
                     <div className={styles.about__cert}>
+                      <div className={styles.about__cert__link}>
+                        <FaStar />
+                        <a href="#about">Azure</a>
+                      </div>
                       <div className={styles.about__cert__link}>
                         <FaAward />
                         <a
@@ -184,7 +202,7 @@ export default function Home<PageLayout>() {
                       </div>
                       <div className={styles.about__info__item}>
                         <p>
-                          Website: <span>www.mason-roberts.com</span>
+                          Website: <span>www.dev-mason-roberts.com</span>
                         </p>
                       </div>
                       <div className={styles.about__info__item}>
@@ -307,7 +325,7 @@ export default function Home<PageLayout>() {
               </div>
             </div>
             <div className={styles.row2}>
-              {templateData.map(item => (
+              {templateData.map((item) => (
                 <ProjectCard
                   key={item.id}
                   imageUrl={item.imageUrl}

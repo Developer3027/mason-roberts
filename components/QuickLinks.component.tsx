@@ -49,14 +49,17 @@ export default function QuickLinks() {
           </Link>
         </Tooltip> */}
         <Tooltip tooltipText="Car Wash">
-          <a href="https://carwash-black.vercel.app" target="__blank">
-            <Image
-              src="/images/carwash.png"
-              alt="car wash site"
-              width={96}
-              height={76}
-            />
-          </a>
+          <Link href="/car-wash">
+            <a>
+            {/* <a href="https://carwash-black.vercel.app" target="__blank"> */}
+              <Image
+                src="/images/carwash.png"
+                alt="car wash site"
+                width={96}
+                height={76}
+              />
+            </a>
+          </Link>
         </Tooltip>
       </div>
     </>

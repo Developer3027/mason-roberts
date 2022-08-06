@@ -69,11 +69,15 @@ function Hermits() {
           </div>
           <div className="flex">
             <p className="text-white mt-4 w-[500px]">
-              Mumbo Jumbo, known as Mumbo, is known for his redstone work. Most
-              subscribed of the Hermits, he one of nine with over 1 million and
-              one of two with over seven million. He has an extensive knowledge
-              of redstone mechanics. He has a Volkswagen van that he cherishes
-              and a photography YouTube channel.
+              This is one of the concepts for the hermit page of Hermit Plus.
+              The landing page is hosted on AWS in a private S3 bucket. It is
+              made available world wide using AWS CloudFront. The site was built
+              in React. The contact form is built in HTML, CSS and Javascript
+              and uses AWS Lambda functions and SES. This site is built in
+              NextJs which houses this page and because it is still under
+              development, uses github to house the repo and AWS Amplify to
+              build it out and host it. This creates a wonderful CI / CD
+              environment. Click the Hermit Plus logo to visit the landing page.
             </p>
             <img
               className="relative z-10 xl:-mt-28"
@@ -87,19 +91,19 @@ function Hermits() {
               href="https://twitter.com/ThatMumboJumbo"
               target="__blank"
               rel="noreferrer">
-              <FaTwitter className="text-[#FFBCD4] text-2xl xl:-mt-[250px]" />
+              <FaTwitter className="text-[#FFBCD4] text-2xl xl:-mt-[150px]" />
             </a>
             <a
               href="https://www.instagram.com/officialmumbo/"
               target="__blank"
               rel="noreferrer">
-              <FaInstagram className="text-[#FFBCD4] text-3xl ml-8 xl:-mt-[250px]" />
+              <FaInstagram className="text-[#FFBCD4] text-3xl ml-8 xl:-mt-[150px]" />
             </a>
             <a
               href="https://www.youtube.com/user/ThatMumboJumbo"
               target="__blank"
               rel="noreferrer">
-              <FaYoutube className="text-[#FFBCD4] text-3xl ml-8 xl:-mt-[250px]" />
+              <FaYoutube className="text-[#FFBCD4] text-3xl ml-8 xl:-mt-[150px]" />
             </a>
           </div>
         </div>
@@ -140,13 +144,25 @@ function Hermits() {
           </button>
           <div className={show ? "block" : "hidden"}>
             <ul className="flex flex-col mr-1 items-end w-full text-white">
-              <li className="py-1">Season 9</li>
-              <li className="py-1">Season 8</li>
+              <li className="hidden sm:block py-1">Season 9</li>
+              <li className="hidden sm:block py-1">Season 8</li>
+              <li className="block sm:hidden mt-2">
+                This is one of the concepts for the hermit page of Hermit Plus.
+                The landing page is hosted on AWS in a private S3 bucket. It is
+                made available world wide using AWS CloudFront. The site was
+                built in React. The contact form is built in HTML, CSS and
+                Javascript and uses AWS Lambda functions and SES. This site is
+                built in NextJs which houses this page and because it is still
+                under development, uses github to house the repo and AWS Amplify
+                to build it out and host it. This creates a wonderful CI / CD
+                environment. Click the Hermit Plus logo to visit the landing
+                page.
+              </li>
             </ul>
           </div>
         </div>
 
-        <div className="flex flex-col mt-4 overflow-y-auto">
+        <div className="flex flex-col mt-4 px-1 overflow-y-auto">
           {mumboData.map((item) => (
             <HermitCard
               key={item.id}

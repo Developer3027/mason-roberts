@@ -28,6 +28,7 @@ export default function CarWash() {
                 </a>
               </h1>
             </div>
+            <p>This page falls out of step with the others. I do apologize for that. I will work up a project page here soon. Currently this project is still active.</p>
             <p className="py-2">
               In May 2022, I started a contract position for Autobell here in
               Charlotte, NC. The pay was little but I took the position to gain

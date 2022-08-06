@@ -10,16 +10,20 @@
   @apply flex basis-full max-w-full mt-20 mb-4 justify-start text-2xl sm:justify-center items-center sm:text-center;
 }
 
+.section__group {
+  @apply flex basis-full max-w-full w-full mt-20 mb-4 justify-evenly text-2xl items-center text-white;
+}
+
 .section__title h2 {
   @apply text-lg text-white font-bold;
 }
 
 .row {
-  @apply flex flex-wrap align-middle justify-center relative;
+  @apply flex flex-wrap align-middle justify-center;
 }
 
 .row2 {
-  @apply flex flex-wrap justify-evenly items-center my-3
+  @apply flex flex-wrap justify-evenly items-center my-4 py-2
 }
 
 .hero__container {
@@ -64,7 +68,7 @@
 }
 
 .hero__btns {
-  @apply flex flex-col items-center w-full sm:flex-row sm:justify-between my-4 md:mx-4 md:px-4;
+  @apply flex flex-col justify-center items-center w-full sm:flex-row my-4 md:mx-4 md:px-4;
 }
 
 .hero__btnsOne {
@@ -127,7 +131,7 @@
 }
 
 .about__cert {
-  @apply flex w-full flex-wrap items-center justify-evenly text-white text-lg mt-10;
+  @apply flex w-full flex-wrap items-center justify-evenly text-white print:text-black text-lg mt-10;
 }
 
 .about__cert__link {
@@ -139,12 +143,14 @@
 }
 
 .about__text {
+  @apply basis-full w-full print:mt-8
+  /* margin-top: 1rem;
   flex: 0 0 100%;
-  max-width: 100%;
+  max-width: 100%; */
 }
 
 .about__text h3 {
-  @apply text-lg sm:text-xl text-white font-bold mb-4;
+  @apply text-lg sm:text-xl text-white print:text-black print:p-2 font-bold mb-4;
   /* font-size: 24px;
   margin-bottom: 15px;
   font-weight: 700;
@@ -152,12 +158,12 @@
 }
 
 .about__text h3 span {
-  @apply text-bright-yellow;
+  @apply text-bright-yellow print:text-cyan-900;
   /* color: var(--skin-color); */
 }
 
 .about__text p {
-  @apply text-base text-slate-900 bg-slate-100 rounded p-2;
+  @apply text-base text-slate-900 bg-slate-100 print:bg-white rounded p-2 print:px-3;
   /* font-size: 16px;
   line-height: 25px;
   color: var(--text-black-700); */
@@ -184,8 +190,13 @@
   max-width: 50%; */
 }
 
+.about__info__hide {
+  @apply flex w-full justify-center lg:w-1/2 mb-4 print:hidden;
+}
+
+
 .about__info__item p {
-  @apply self-end font-semibold w-5/6 pb-1 text-base text-white border-b-2 border-white;
+  @apply self-end font-semibold w-5/6 pb-1 text-base text-white print:text-black border-b-2 border-white print:border-slate-300;
   /* font-weight: 600;
   padding: 10px 0;
   font-size: 16px;
@@ -194,7 +205,7 @@
 }
 
 .about__info__item p span {
-  @apply font-normal text-yellow-300 ml-1 inline-block;
+  @apply font-normal text-yellow-300 print:text-stone-700 ml-1 inline-block;
   /* font-weight: 400;
   color: var(--text-black-700);
   margin-left: 4px;
@@ -202,7 +213,7 @@
 }
 
 .about__skills {
-  @apply flex basis-1/4 flex-col justify-center items-center w-full mt-4;
+  @apply flex basis-1/4 flex-col print:flex-row print:flex-wrap justify-center items-center w-full mt-4 print:my-6;
   /* display: flex;
   justify-content: center;
   align-items: center;
@@ -221,7 +232,7 @@
 }
 
 .skill__type {
-  @apply bg-slate-500 p-1 text-sm text-white rounded-l-lg w-16;
+  @apply bg-slate-500 p-1 text-sm text-white rounded-l-lg w-[74px];
 }
 
 .skill__infog {
@@ -230,6 +241,10 @@
 
 .skill__infob {
   @apply bg-blue-400 py-1 px-2 text-sm text-black rounded-r-lg w-36;
+}
+
+.skill__infop {
+  @apply bg-purple-400 py-1 px-2 text-sm text-black rounded-r-lg w-36;
 }
 
 .skill__infoo {
@@ -242,7 +257,7 @@
 
 .education,
 .experience {
-  @apply flex flex-col lg:basis-1/2 lg:w-1/2 my-7;
+  @apply flex flex-col lg:basis-1/2 lg:w-1/2 my-7 print:my-0;
   /* flex: 0 0 50%;
   max-width: 50%;
   margin-top: 30px; */
@@ -257,13 +272,13 @@ h3.title {
 }
 
 .timeline_box {
-  @apply flex basis-full flex-col w-full mx-2;
+  @apply flex basis-full flex-col w-full mx-2 print:mx-0;
   /* flex: 0 0 100%;
   max-width: 100%; */
 }
 
 .timeline {
-  @apply relative bg-slate-100 px-1 md:px-7 py-4 border border-antique-20 rounded w-full;
+  @apply bg-slate-100 print:bg-white print:my-1 px-1 md:px-7 py-4 border print:border-b-2 border-antique-20 rounded w-full;
   /* background-color: var(--bg-black-100);
   padding: 30px 15px;
   border: 1px solid var(--bg-black-50);
@@ -273,13 +288,13 @@ h3.title {
 }
 
 .timeline_item {
-  @apply relative pl-1 md:pl-9 pb-2 mb-2 md:pb-6 md:mb-6 border-b-2 border-slate-300;
+  @apply pl-1 md:pl-9 pb-2 mb-2 md:pb-6 md:mb-6 print:mb-1 border-b-2 border-slate-300 print:my-0 print:py-3;
   /* position: relative;
   padding-left: 37px;
   padding-bottom: 50px; */
 }
 
-.timeline_item:last-child {
+/* .timeline_item:last-child {
   padding-bottom: 0;
 }
 
@@ -291,7 +306,7 @@ h3.title {
   left: 7px;
   top: 0;
   background-color: var(--green);
-}
+} */
 
 .circle_dot {
   position: absolute;

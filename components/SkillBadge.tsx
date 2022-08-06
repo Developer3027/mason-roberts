@@ -12,6 +12,8 @@ function SkillBadge(props: Skill) {
     clr = styles.skill__infog;
   } else if (props.flag === "b") {
     clr = styles.skill__infob;
+  } else if (props.flag === "p") {
+    clr = styles.skill__infop;
   } else {
     clr = styles.skill__infoo;
   }

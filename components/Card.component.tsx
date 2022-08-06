@@ -153,7 +153,7 @@ interface HermitProps {
 
 export function HermitCard(props: HermitProps) {
   return (
-    <div className="flex flex-col p-2 w-full my-1 bg-[#40A5DD] rounded-md text-white px-4 xl:px-0">
+    <div className="flex flex-col px-10 xl:px-1 py-1 w-full my-1 bg-[#40A5DD] rounded-md text-white">
       <h4>{`Season ${props.season} Episode ${props.episode}`}</h4>
       <div className="flex mt-1">
         <img
