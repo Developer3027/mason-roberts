@@ -44,13 +44,14 @@ export default function Home<PageLayout>() {
       reason: reason,
       message: message
     }
-    console.log("data from form: ", formData);
+    // console.log("data from form: ", formData);
+    // https://bn0q84bpl1.execute-api.us-east-1.amazonaws.com/development/contact
     fetch(
-      "https://bn0q84bpl1.execute-api.us-east-1.amazonaws.com/development",
+      " https://bn0q84bpl1.execute-api.us-east-1.amazonaws.com/production/contact",
       {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
         body: JSON.stringify(formData),
       },
@@ -58,6 +59,10 @@ export default function Home<PageLayout>() {
       .then((response) => response.json())
       .then((data) => {
         setFormMsg("email sent, thank you");
+        setName("");
+        setEmail("");
+        setReason("");
+        setMessage("");
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -681,8 +686,8 @@ export default function Home<PageLayout>() {
                       className="w-full my-1 text-black"></textarea>
                   </div>
                   <div className="buttonWrap">
-                    <button type="submit" onClick={(e) => submitToApi(e)}>
-                      Find Diamonds
+                    <button className="border rounded border-slate-400 px-8 py-2" type="submit" onClick={(e) => submitToApi(e)}>
+                      Send Info
                     </button>
                   </div>
                 </form>
