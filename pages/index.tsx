@@ -1,17 +1,20 @@
-import { ReactElement, useRef } from "react";
+import { ReactElement, useRef, useState } from "react";
 import ReactToPrint from "react-to-print";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { skillData } from "../data/homeData";
-import {
-  FaAward, FaStar,
-} from "react-icons/fa";
+import { FaAward, FaStar } from "react-icons/fa";
 
 import SkillBadge from "../components/SkillBadge";
 import QuickLinks from "../components/QuickLinks.component";
 import MainLayout from "../components/layouts/MainLayout.component";
-import { EduCard, ExpCard, ProjectCard, ServicesCard } from "../components/Card.component";
+import {
+  EduCard,
+  ExpCard,
+  ProjectCard,
+  ServicesCard,
+} from "../components/Card.component";
 
 import {
   experience,
@@ -25,6 +28,41 @@ import styles from "../styles/Home.module.css";
 export default function Home<PageLayout>() {
   const serviceIconStyle = { color: "darkslategrey", fontSize: "36px" };
   let componentRef = useRef(null);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [reason, setReason] = useState("");
+  const [message, setMessage] = useState("");
+  const [formMsg, setFormMsg] = useState("");
+
+
+  const submitToApi = (e: any) => {
+    e.preventDefault();
+
+    const formData = {
+      name: name,
+      email: email,
+      reason: reason,
+      message: message
+    }
+    console.log("data from form: ", formData);
+    fetch(
+      "https://bn0q84bpl1.execute-api.us-east-1.amazonaws.com/development",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      },
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setFormMsg("email sent, thank you");
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
   return (
     <div>
       <Head>
@@ -85,7 +123,7 @@ export default function Home<PageLayout>() {
                         </div>
                       </a>
                     </Link> */}
-                    <Link className={styles.hero__link} href="/contact">
+                    <Link className={styles.hero__link} href="#contact">
                       <a>
                         <div className={styles.hero__btnsTwo}>
                           <p>Contact Me</p>
@@ -123,7 +161,219 @@ export default function Home<PageLayout>() {
                 />
               </div>
             </div>
-            <div ref={componentRef} className={styles.row}>
+
+            <div
+              ref={componentRef}
+              className="bg-white rounded p-2 hidden print:block">
+              <div className="flex flex-col">
+                <h1 className="text-4xl">Mason Roberts</h1>
+                <span>2363 Eden Tr. Apt 103</span>
+                <span>Rock Hill, SC, 29730</span>
+                <span>
+                  Email:{" "}
+                  <span className="text-purple-900">
+                    mroberts@dev-mason-roberts.com
+                  </span>
+                </span>
+              </div>
+              <div className="my-2">
+                <h1 className="text-2xl mt-3 border-b border-slate-600">
+                  Web / App Developer
+                </h1>
+                <p className="px-2 mt-1">
+                  Certified and innovative <span>Full Stack Developer</span>{" "}
+                  with proven experience working on both front-end and back-end
+                  development. Skilled in Designing and developing smart,
+                  elegant websites and apps quickly and efficiently with
+                  exceptional user interfaces in a fast-paced environment. I
+                  possess a strong grasp of Javascript, CSS, HTML as well as a
+                  deep understanding of web standards and usability, plus a
+                  solid design aesthetic.{" "}
+                </p>
+              </div>
+              <div>
+                <h1 className="text-2xl mt-3 border-b border-slate-600">
+                  Core Competencies
+                </h1>
+                <div className="flex flex-wrap flex-col px-2 mt-1 h-24">
+                  <span>Full-stack</span>
+                  <span>Design UI / UX</span>
+                  <span>Figma Design</span>
+                  <span>Client Side Frameworks</span>
+                  <span>Server Languages</span>
+                  <span>Database Languages</span>
+                  <span>Cloud Development</span>
+                  <span>Agile / SCRUM Development</span>
+                  <span>Version Control Github / Gitlab </span>
+                  <span>Azure App / MSAL - Auth</span>
+                </div>
+              </div>
+              <div>
+                <h1 className="text-2xl mt-3 border-b border-slate-600">
+                  Languages
+                </h1>
+                <div className="flex flex-wrap flex-col px-2 mt-3 h-24">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>Javascript</span>
+                  <span>Typescript</span>
+                  <span>React</span>
+                  <span>Next</span>
+                  <span>Redux</span>
+                  <span>Context</span>
+                  <span>TailwindCss</span>
+                  <span>Styled Components</span>
+                  <span>Node</span>
+                  <span>MySql</span>
+                  <span>MariaDB</span>
+                  <span>MongoDB</span>
+                  <span>Prisma</span>
+                  <span>TypeORM</span>
+                  <span>Axios</span>
+                  <span>Fetch</span>
+                  <span>AWS</span>
+                  <span>Azure</span>
+                </div>
+              </div>
+              <div>
+                <h1 className="text-2xl mt-4 border-b border-slate-600">
+                  Experience
+                </h1>
+                <div>
+                  <div className="flex justify-between px-1 mt-4 bg-slate-100">
+                    <h1 className="font-bold mt-1">Autobell</h1>
+                    <span>May 2022 to Aug 2022</span>
+                  </div>
+                  <div className="px-1">
+                    <span>
+                      Key Skills: Node / Javascript / Typescript / Next /
+                      MongoDB / MySql / Prisma / Async code
+                    </span>
+                    <ul className="list-disc decoration-black px-1 mt-1 ml-2">
+                      <li>
+                        {" "}
+                        Developed asynchronous Node scripts to make API calls
+                        and write returned data into MongoDB collections.
+                      </li>
+                      <li>
+                        {" "}
+                        Wrote above script to loop through array of objects
+                        which allowed script to use various inputs.
+                      </li>
+                      <li>
+                        {" "}
+                        Wrote above script to loop through API call until all
+                        data returned.
+                      </li>
+                      <li>
+                        {" "}
+                        Wrote above script to check Mongo collection last
+                        written record, retrieve a specific field and use to
+                        filter API call.
+                      </li>
+                      <li>
+                        {" "}
+                        Wrote various tools to assist in developing above
+                        scripts.
+                      </li>
+                      <li> Built concept for internal reports app in Next.</li>
+                      <li>
+                        {" "}
+                        Configured personal Azure account to register app.
+                      </li>
+                      <li> Set up members and applied MSAL auth to app.</li>
+                      <li> Protected routes with app roles.</li>
+                      <li>
+                        {" "}
+                        Configured Prisma to pull data from on premises MariaDB
+                        database.
+                      </li>
+                      <li> Configured Charts.</li>
+                      <li>
+                        {" "}
+                        Configured ability for managers to print reports.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between px-1 mt-4 bg-slate-100">
+                    <h1 className="font-bold mt-1">
+                      Fullstack Web Development
+                    </h1>
+                    <span>Oct 2019 to Aug 2022</span>
+                  </div>
+                  <div className="px-1">
+                    <span>
+                      Key Skills: Node / Javascript / Typescript / React / Next
+                      / MongoDB / Async code / Design / HTML / CSS / AWS / Azure
+                      / JSON / Git
+                    </span>
+                    <ul className="list-disc decoration-black px-1 mt-1 ml-2">
+                      <li> Design various interfaces for various projects.</li>
+                      <li> Build various projects in various frameworks.</li>
+                      <li>
+                        {" "}
+                        Organize various projects with Git in Github and Gitlab
+                      </li>
+                      <li> Document various projects in Github and Gitlab</li>
+                      <li>
+                        {" "}
+                        Style various projects using CSS and various CSS
+                        Frameworks.
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg mt-1">Key Projects</h3>
+                    <span className="font-medium border-b border-slate-500">
+                      Hermit plus
+                    </span>
+                    <p>
+                      Video Web applications that brings all the hermits of
+                      hermitcraft into one place to better enjoy the hermits.
+                      Easily find and track hermits.
+                    </p>
+                    <span className="font-medium border-b border-slate-500">
+                      Salt and Tar
+                    </span>
+                    <p>
+                      Video Web applications for the sailboat Rediviva and the
+                      crew. Easily find video, photos, and shop to support the
+                      channel.
+                    </p>
+                    <span className="font-medium border-b border-slate-500">
+                      Erudition
+                    </span>
+                    <p>
+                      Web applications built while studying for the Solution
+                      Architect Associate exam.
+                    </p>
+                    <span className="font-medium border-b border-slate-500">
+                      Nutrasite
+                    </span>
+                    <p>Ecommerce Web applications for nutrition supplements.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="px-1 mt-2">
+                <h1 className="font-bold mt-1 bg-slate-100">Education</h1>
+                <div className="flex justify-between">
+                  <h3>PluralSite</h3>
+                  <span>On Going</span>
+                </div>
+                <div className="flex justify-between">
+                  <h3>Lambda School</h3>
+                  <span>2019 - 2021</span>
+                </div>
+                <div className="flex justify-between">
+                  <h3>My Computer Career</h3>
+                  <span>2018 - 2019</span>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.row}>
               <div className={styles.about__content}>
                 <div className={styles.row}>
                   <div className={styles.about__text}>
@@ -339,56 +589,105 @@ export default function Home<PageLayout>() {
                 />
               ))}
             </div>
-            {/* <div class="row">
-            <div class="portfolio-heading">
-              <h2>Current Projects</h2>
-            </div>
           </div>
-          <div class="row">
-            <!-- Portfolio Item -->
-            <div class="portfolio-item padd-15">
-              <div class="portfolio-item-inner dark-shadow">
-                <div class="portfolio-img">
-                  <img src="images/portfolio/erudition.png" alt="">
-                </div>
+        </section>
+
+        <section id="contact" className={styles.section}>
+          <div className={styles.container}>
+            <div className={styles.row}>
+              <div className={styles.section__title}>
+                <h2>Contact Form</h2>
               </div>
             </div>
-            <div class="portfolio-item padd-15">
-              <div class="portfolio-item-inner dark-shadow">
-                <div class="portfolio-img">
-                  <img src="images/portfolio/hermitplus.png" alt="">
-                </div>
+            <div className={styles.row}>
+              <div className="w-full max-w-sm">
+                <form id="contact-form" className="w-full text-white">
+                  <div className="">
+                    {/* //^ for error / help message */}
+                    <p id="p1" className="text-green-600">
+                      {formMsg}
+                    </p>
+                  </div>
+                  <div className="flex flex-col">
+                    <label htmlFor="name">Name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      placeholder="Name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      className="rounded p-1 my-2 text-black"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <label htmlFor="email">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      placeholder="Email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="rounded p-1 my-2 text-black"
+                    />
+                  </div>
+                  <div className="">
+                    <p>Select One</p>
+                    <div className="">
+                      <input
+                        type="radio"
+                        id="reason"
+                        name="reason"
+                        value="general"
+                        onChange={(e) => setReason(e.target.value)}
+                        className="mx-2"
+                      />
+                      <label>General</label>
+                    </div>
+                    <div className="inputChoice">
+                      <input
+                        type="radio"
+                        id="reason"
+                        name="reason"
+                        value="employment"
+                        onChange={(e) => setReason(e.target.value)}
+                        className="mx-2"
+                      />
+                      <label>I would like to offer you employment.</label>
+                    </div>
+                    <div className="inputChoice">
+                      <input
+                        type="radio"
+                        id="reason"
+                        name="reason"
+                        value="freelancing"
+                        onChange={(e) => setReason(e.target.value)}
+                        className="mx-2"
+                      />
+                      <label>I would like to hire you freelancing.</label>
+                    </div>
+                  </div>
+                  <div className="">
+                    <label htmlFor="message" className="mt-2">
+                      Message
+                    </label>
+                    <textarea
+                      name="message"
+                      cols={4}
+                      rows={5}
+                      id="message"
+                      placeholder="How can I help you?"
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      className="w-full my-1 text-black"></textarea>
+                  </div>
+                  <div className="buttonWrap">
+                    <button type="submit" onClick={(e) => submitToApi(e)}>
+                      Find Diamonds
+                    </button>
+                  </div>
+                </form>
               </div>
             </div>
-            <div class="portfolio-item padd-15">
-              <div class="portfolio-item-inner dark-shadow">
-                <div class="portfolio-img">
-                  <img src="images/portfolio/kathryn-roberts.png" alt="">
-                </div>
-              </div>
-            </div>
-            <div class="portfolio-item padd-15">
-              <div class="portfolio-item-inner dark-shadow">
-                <div class="portfolio-img">
-                  <img src="images/portfolio/music-found.png" alt="">
-                </div>
-              </div>
-            </div>
-            <div class="portfolio-item padd-15">
-              <div class="portfolio-item-inner dark-shadow">
-                <div class="portfolio-img">
-                  <img src="images/portfolio/saltar.png" alt="">
-                </div>
-              </div>
-            </div>
-            <div class="portfolio-item padd-15">
-              <div class="portfolio-item-inner dark-shadow">
-                <div class="portfolio-img">
-                  <img src="images/portfolio/amazon.png" alt="">
-                </div>
-              </div>
-            </div>
-          </div> */}
           </div>
         </section>
       </main>
