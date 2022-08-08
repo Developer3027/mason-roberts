@@ -339,7 +339,7 @@ body {
 
 
 .nav__specials {
-  @apply hidden sm:flex flex justify-between w-[250px] ml-8;
+  @apply hidden sm:flex justify-between w-[250px] ml-8;
   /* display: flex;
   justify-content: space-between;
   color: var(--highlight-font-color);

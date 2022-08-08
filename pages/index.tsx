@@ -182,6 +182,12 @@ export default function Home<PageLayout>() {
                     mroberts@dev-mason-roberts.com
                   </span>
                 </span>
+                <span>
+                  Site:{" "}
+                  <span className="text-purple-900">
+                    www.dev-mason-roberts.com
+                  </span>
+                </span>
               </div>
               <div className="my-2">
                 <h1 className="text-2xl mt-3 border-b border-slate-600">
@@ -390,11 +396,12 @@ export default function Home<PageLayout>() {
                     <p>
                       I have always been into computers and tech. In 2019 I went
                       through www.mycomputercareer.com and gained a few
-                      certifications. I learned how computers work, about networking
-                      and how the internet works, and network security. In 2020 I
-                      went through Lambda School and learned full stack web
-                      development. After Lambda, I learned Figma and designed many sites and
-                      apps. In 2022 I learned AWS cloud solutions. Recently I assisted a widely known
+                      certifications. I learned how computers work, about
+                      networking and how the internet works, and network
+                      security. In 2020 I went through Lambda School and learned
+                      full stack web development. After Lambda, I learned Figma
+                      and designed many sites and apps. In 2022 I learned AWS
+                      cloud solutions. Recently I assisted a widely known
                       carwash with an internal reports dashboard that was
                       authenticated through Microsoft using MSAL and became very
                       familiar with Azure. Now I build web based solutions for
