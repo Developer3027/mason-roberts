@@ -1,17 +1,17 @@
 .section {
-  @apply flex min-h-screen overflow-y-auto overflow-x-hidden transition-all;
+  @apply flex h-full overflow-y-auto overflow-x-hidden transition-all lg:min-h-screen lg:justify-center lg:items-center;
 }
 
 .container {
-  @apply w-[325px] sm:w-[525px] lg:w-[950px] mt-24 sm:mt-0 mx-auto px-2 ml-20;
+  @apply w-[325px] sm:w-[525px] lg:w-[950px] mt-10 mx-auto px-2;
 }
 
 .section__title {
-  @apply flex basis-full max-w-full mt-20 mb-4 justify-start text-2xl sm:justify-center items-center sm:text-center;
+  @apply flex basis-full max-w-full mb-4 justify-start text-2xl sm:justify-center items-center sm:text-center;
 }
 
 .section__group {
-  @apply flex basis-full max-w-full w-full mt-20 mb-4 justify-evenly text-2xl items-center text-white;
+  @apply flex basis-full max-w-full w-full mb-4 justify-evenly text-2xl items-center text-white;
 }
 
 .section__title h2 {
@@ -27,7 +27,7 @@
 }
 
 .hero__container {
-  @apply flex items-center justify-center h-screen;
+  @apply flex items-center justify-center ;
 }
 
 .hero__wrapper {
@@ -39,7 +39,7 @@
 }
 
 .hero__warning {
-  @apply flex -mt-20 sm:hidden
+  @apply  mt-20 hidden
 }
 
 .hero__quick__links {
@@ -132,6 +132,10 @@
 
 .about__cert {
   @apply flex w-full flex-wrap items-center justify-evenly text-white print:text-black text-lg mt-10;
+}
+
+.resume__print {
+  @apply border border-slate-200 rounded px-8 py-2
 }
 
 .about__cert__link {
@@ -308,22 +312,17 @@ h3.title {
   background-color: var(--green);
 } */
 
-.circle_dot {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 15px;
-  width: 15px;
-  border-radius: 50%;
-  background-color: var(--green);
-}
+/* .circle_dot {
+  width: 50px;
+} */
 
 .timeline_date {
   display: flex;
   align-items: center;
   font-weight: 400;
   font-size: 14px;
-  margin-bottom: 12px;
+  margin-top: 8px;
+  /* margin-bottom: 12px; */
   color: var(--text-black-700);
 }
 

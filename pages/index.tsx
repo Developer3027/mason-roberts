@@ -156,14 +156,16 @@ export default function Home<PageLayout>() {
 
         <section id="about" className={styles.section}>
           <div className={styles.container}>
-            <div className="row">
+            <div className={styles.row}>
               <div className={styles.section__group}>
                 <h2>About</h2>
-                <ReactToPrint
-                  trigger={() => <button>Print</button>}
-                  documentTitle="Mason Roberts Resume"
-                  content={() => componentRef.current}
-                />
+                <div className={styles.resume__print}>
+                  <ReactToPrint
+                    trigger={() => <button>Print</button>}
+                    documentTitle="Mason Roberts Resume"
+                    content={() => componentRef.current}
+                  />
+                </div>
               </div>
             </div>
 
@@ -306,7 +308,7 @@ export default function Home<PageLayout>() {
                     <h1 className="font-bold mt-1">
                       Fullstack Web Development
                     </h1>
-                    <span>Oct 2019 to Aug 2022</span>
+                    <span>Oct 2019 to Current</span>
                   </div>
                   <div className="px-1">
                     <span>
@@ -369,7 +371,7 @@ export default function Home<PageLayout>() {
                 </div>
                 <div className="flex justify-between">
                   <h3>Lambda School</h3>
-                  <span>2019 - 2021</span>
+                  <span>2019 - 2020</span>
                 </div>
                 <div className="flex justify-between">
                   <h3>My Computer Career</h3>
@@ -527,6 +529,8 @@ export default function Home<PageLayout>() {
                             key={item.id}
                             dateRange={item.dateRange}
                             linkTag={item.linkTag}
+                            anchor={item.anchor}
+                            imageUrl={item.imageUrl}
                             title={item.title}
                             desc={item.desc}
                           />
@@ -607,7 +611,7 @@ export default function Home<PageLayout>() {
             <div className={styles.row}>
               <div className="w-full max-w-sm">
                 <form id="contact-form" className="w-full text-white">
-                  <div className="">
+                  <div className="mt-4">
                     {/* //^ for error / help message */}
                     <p id="p1" className="text-green-600">
                       {formMsg}
@@ -685,8 +689,11 @@ export default function Home<PageLayout>() {
                       onChange={(e) => setMessage(e.target.value)}
                       className="w-full my-1 text-black"></textarea>
                   </div>
-                  <div className="buttonWrap">
-                    <button className="border rounded border-slate-400 px-8 py-2" type="submit" onClick={(e) => submitToApi(e)}>
+                  <div className="mt-2">
+                    <button
+                      className="border rounded border-slate-400 px-8 py-2"
+                      type="submit"
+                      onClick={(e) => submitToApi(e)}>
                       Send Info
                     </button>
                   </div>
@@ -695,6 +702,7 @@ export default function Home<PageLayout>() {
             </div>
           </div>
         </section>
+        <div className="h-20"></div>
       </main>
     </div>
   );
