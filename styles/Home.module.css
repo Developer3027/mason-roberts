@@ -341,7 +341,7 @@ h3.title {
 .timeline_text {
   line-height: 25px;
   font-size: 16px;
-  text-align: justify;
+  /* text-align: justify; */
   color: var(--text-black-700);
 }
 

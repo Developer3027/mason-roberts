@@ -388,16 +388,15 @@ export default function Home<PageLayout>() {
                       Mason Roberts - <span>Web Architect</span>.
                     </h3>
                     <p>
-                      I have always been into computer and tech. In 2019 I went
-                      through my computer career.com and gained a few
-                      certification. Learned how computers work about networking
-                      and how the internet works and network security. In 2020 I
-                      went through Lambda School and learned full stack
-                      development. I learned Figma and designed many sites and
-                      apps. In 2022 I learned AWS services, the resources and
-                      tools available. Recently I assisted a widely known
+                      I have always been into computers and tech. In 2019 I went
+                      through www.mycomputercareer.com and gained a few
+                      certifications. I learned how computers work, about networking
+                      and how the internet works, and network security. In 2020 I
+                      went through Lambda School and learned full stack web
+                      development. After Lambda, I learned Figma and designed many sites and
+                      apps. In 2022 I learned AWS cloud solutions. Recently I assisted a widely known
                       carwash with an internal reports dashboard that was
-                      authenticated through Microsoft using MSAL. I became very
+                      authenticated through Microsoft using MSAL and became very
                       familiar with Azure. Now I build web based solutions for
                       you. <br />
                       <br />
@@ -454,11 +453,6 @@ export default function Home<PageLayout>() {
                       </div>
                       <div className={styles.about__info__item}>
                         <p>
-                          Age: <span>50</span>
-                        </p>
-                      </div>
-                      <div className={styles.about__info__item}>
-                        <p>
                           Website: <span>www.dev-mason-roberts.com</span>
                         </p>
                       </div>
@@ -485,6 +479,11 @@ export default function Home<PageLayout>() {
                       <div className={styles.about__info__item}>
                         <p>
                           Freelance: <span>Available</span>
+                        </p>
+                      </div>
+                      <div className={styles.about__info__item}>
+                        <p>
+                          Employment: <span>Available</span>
                         </p>
                       </div>
                     </div>

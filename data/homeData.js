@@ -65,7 +65,7 @@ export const education = [
     id: 1,
     dateRange: "2022 - 2022",
     title: "Autobell",
-    desc: "Wrote Node scripts to make API calls and store data in MongoDb. Build internal reports app in NextJs using Prisma",
+    desc: "Wrote Node scripts to make API calls and store data in MongoDb. Built internal reports app in NextJs using Prisma",
   },
   {
     id: 2,
