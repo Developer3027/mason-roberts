@@ -11,6 +11,7 @@ export default function CarWash() {
     <>
       <section className={styles.section}>
         <div className={styles.container}>
+          <div className="mt-8"></div>
           <div className={styles.carwash__wrapper}>
             <div className="flex justify-start items-center mb-2 w-full">
               <Image
