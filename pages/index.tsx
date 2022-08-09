@@ -194,7 +194,7 @@ export default function Home<PageLayout>() {
                   Web / App Developer
                 </h1>
                 <p className="px-2 mt-1">
-                  Certified and innovative <span>Full Stack Developer</span>{" "}
+                  Certified and innovative <span>Full Stack / Web Developer</span>{" "}
                   with proven experience working on both front-end and back-end
                   development. Skilled in Designing and developing smart,
                   elegant websites and apps quickly and efficiently with
@@ -289,7 +289,7 @@ export default function Home<PageLayout>() {
                         Wrote various tools to assist in developing above
                         scripts.
                       </li>
-                      <li> Built concept for internal reports app in Next.</li>
+                      <li>Built concept for internal reports app in Next.</li>
                       <li>
                         {" "}
                         Configured personal Azure account to register app.
