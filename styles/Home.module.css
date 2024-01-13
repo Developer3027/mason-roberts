@@ -47,7 +47,7 @@
 }
 
 .hero__inner {
-  @apply w-full;
+  @apply w-full mt-5 mb-5;
 }
 
 .hero__leftEdge {
@@ -83,13 +83,11 @@
 }
 
 .hero__btnsTwo {
-  @apply flex items-center justify-center w-40 h-12 bg-green-600 text-base font-bold text-white transition-all cursor-pointer rounded;
+  @apply flex items-center justify-center w-40 h-12 bg-antique-20 text-base font-bold text-black transition-all cursor-pointer rounded;
 }
 
 .hero__btnsTwo:hover {
-  background-color: slateblue;
-  outline: 1px solid #fff;
-  outline-offset: -7px;
+  @apply bg-bright-yellow
 }
 
 .hero__btnsHire {

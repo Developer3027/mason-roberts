@@ -35,39 +35,39 @@ export default function Home<PageLayout>() {
   const [formMsg, setFormMsg] = useState("");
 
 
-  const submitToApi = (e: any) => {
-    e.preventDefault();
+  // const submitToApi = (e: any) => {
+  //   e.preventDefault();
 
-    const formData = {
-      name: name,
-      email: email,
-      reason: reason,
-      message: message
-    }
+  //   const formData = {
+  //     name: name,
+  //     email: email,
+  //     reason: reason,
+  //     message: message
+  //   }
     // console.log("data from form: ", formData);
     // https://bn0q84bpl1.execute-api.us-east-1.amazonaws.com/development/contact
-    fetch(
-      " https://bn0q84bpl1.execute-api.us-east-1.amazonaws.com/production/contact",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData),
-      },
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setFormMsg("email sent, thank you");
-        setName("");
-        setEmail("");
-        setReason("");
-        setMessage("");
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  };
+  //   fetch(
+  //     " https://bn0q84bpl1.execute-api.us-east-1.amazonaws.com/production/contact",
+  //     {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json"
+  //       },
+  //       body: JSON.stringify(formData),
+  //     },
+  //   )
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setFormMsg("email sent, thank you");
+  //       setName("");
+  //       setEmail("");
+  //       setReason("");
+  //       setMessage("");
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error:", error);
+  //     });
+  // };
   return (
     <div>
       <Head>
@@ -114,7 +114,7 @@ export default function Home<PageLayout>() {
                         If you would like to know more about me, or are
                         interested in my work, you can contact me at{" "}
                         <span className={styles.hero__hl}>
-                          dev3027@mason-roberts.com
+                          mrobe18@gmail.com
                         </span>
                       </p>
                     </div>
@@ -127,14 +127,14 @@ export default function Home<PageLayout>() {
                           <p>Enter</p>
                         </div>
                       </a>
-                    </Link> */}
+                    </Link>
                     <Link className={styles.hero__link} href="#contact">
                       <a>
                         <div className={styles.hero__btnsTwo}>
                           <p>Contact Me</p>
                         </div>
                       </a>
-                    </Link>
+                    </Link> */}
                   </div>
 
                   <div className={styles.hero__title}>
@@ -179,13 +179,13 @@ export default function Home<PageLayout>() {
                 <span>
                   Email:{" "}
                   <span className="text-purple-900">
-                    mroberts@dev-mason-roberts.com
+                    mrobe18@gmail.com
                   </span>
                 </span>
                 <span>
                   Site:{" "}
                   <span className="text-purple-900">
-                    www.dev-mason-roberts.com
+                    www.mason-roberts.dev
                   </span>
                 </span>
               </div>
@@ -455,12 +455,12 @@ export default function Home<PageLayout>() {
                       <div className={styles.about__info__item}>
                         <p>
                           LinkedIn:{" "}
-                          <span>www.linkedin.com/in/mason-roberts-3027</span>
+                          <Link href="https://www.linkedin.com/in/mason-roberts-3027"><a><span>www.linkedin.com/in/mason-roberts-3027</span></a></Link>
                         </p>
                       </div>
                       <div className={styles.about__info__item}>
                         <p>
-                          Website: <span>www.dev-mason-roberts.com</span>
+                          Website: <span>www.mason-roberts.dev</span>
                         </p>
                       </div>
                       <div className={styles.about__info__item}>
@@ -607,7 +607,7 @@ export default function Home<PageLayout>() {
           </div>
         </section>
 
-        <section id="contact" className={styles.section}>
+        {/* <section id="contact" className={styles.section}>
           <div className={styles.container}>
             <div className={styles.row}>
               <div className={styles.section__title}>
@@ -618,7 +618,6 @@ export default function Home<PageLayout>() {
               <div className="w-full max-w-sm">
                 <form id="contact-form" className="w-full text-white">
                   <div className="mt-4">
-                    {/* //^ for error / help message */}
                     <p id="p1" className="text-green-600">
                       {formMsg}
                     </p>
@@ -698,8 +697,7 @@ export default function Home<PageLayout>() {
                   <div className="mt-2">
                     <button
                       className="border rounded border-slate-400 px-8 py-2"
-                      type="submit"
-                      onClick={(e) => submitToApi(e)}>
+                      type="submit">
                       Send Info
                     </button>
                   </div>
@@ -707,7 +705,7 @@ export default function Home<PageLayout>() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
         <div className="h-20"></div>
       </main>
     </div>
